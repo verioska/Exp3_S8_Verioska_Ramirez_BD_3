@@ -1,0 +1,61 @@
+{
+  "realm": "bankxyz",
+  "enabled": true,
+  "roles": {
+    "realm": [
+      {
+        "name": "BANK_API",
+        "description": "Acceso a APIs web, mobile y datos migrados"
+      },
+      {
+        "name": "ATM",
+        "description": "Acceso a operaciones del canal ATM"
+      }
+    ]
+  },
+  "clients": [
+    {
+      "clientId": "bank-account-service",
+      "enabled": true,
+      "publicClient": true,
+      "directAccessGrantsEnabled": true,
+      "standardFlowEnabled": true,
+      "redirectUris": [
+        "*"
+      ],
+      "webOrigins": [
+        "*"
+      ]
+    }
+  ],
+  "users": [
+    {
+      "username": "api-user",
+      "enabled": true,
+      "credentials": [
+        {
+          "type": "password",
+          "value": "api123",
+          "temporary": false
+        }
+      ],
+      "realmRoles": [
+        "BANK_API"
+      ]
+    },
+    {
+      "username": "atm-user",
+      "enabled": true,
+      "credentials": [
+        {
+          "type": "password",
+          "value": "atm123",
+          "temporary": false
+        }
+      ],
+      "realmRoles": [
+        "ATM"
+      ]
+    }
+  ]
+}
